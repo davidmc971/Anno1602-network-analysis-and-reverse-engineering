@@ -1,4 +1,5 @@
 Basic event structure:
+===
 [id1][id2][action][size]
 [data..................]
 id1, id2 differ only at the integer's end and are also sligtly
