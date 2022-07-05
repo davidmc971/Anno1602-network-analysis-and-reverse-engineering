@@ -1,0 +1,18 @@
+{
+  "name": "nodeproxy",
+  "version": "1.0.0",
+  "description": "A proxy written in TypeScript and using NodeJS for the purpose of reverse engineering game netcode, mainly that of the 20th century release of Anno 1602 (1602 A.D.).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --respawn --transpile-only src/app.ts"
+  },
+  "keywords": [],
+  "author": "David Alexander Pfeiffer (davidmc971)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.0.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.7.4"
+  }
+}
