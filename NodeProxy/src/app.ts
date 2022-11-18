@@ -11,7 +11,7 @@ const PORTS_GAME = Array.from(
 const server = dgram.createSocket("udp4");
 
 server.on("message", (msg, rinfo) => {
-  console.log(msg);
+  console.log(msg.toString("hex"));
   console.log(rinfo);
 });
 
