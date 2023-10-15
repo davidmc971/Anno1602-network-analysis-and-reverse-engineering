@@ -138,6 +138,7 @@ const cleanShutdown = () => {
   } else {
     shutdown();
   }
+  while (process.exitCode === undefined);
 };
 process.on("SIGINT", cleanShutdown);
 process.on("SIGTERM", cleanShutdown);
