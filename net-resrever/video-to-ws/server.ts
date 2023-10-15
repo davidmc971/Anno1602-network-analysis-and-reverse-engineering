@@ -54,7 +54,7 @@ const testProcess = spawn("ffmpeg", ffmpegArgs, {
   stdio: ["pipe", "ignore", "pipe", "overlapped"],
 });
 
-// testProcess.stderr?.on("data", (data) => console.log(chalk.bgRed(data)));
+testProcess.stderr?.on("data", (data) => console.log(chalk.bgRed(data)));
 
 const videoPipe = testProcess.stdio[3];
 
