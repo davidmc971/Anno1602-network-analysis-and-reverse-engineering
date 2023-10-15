@@ -1,0 +1,706 @@
+➜  1602ProxyPython git:(main) ✗ python3 main.py
+[UDP, 47624] init done.
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 47624] Ready to receive from client
+[UDP, 47624] Ready to receive from host
+[UDP, 2300] init done.
+[DPLAY, 2301, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2301, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2300] Ready to receive from client
+[UDP, 2301] init done.
+[UDP, 2300] Ready to receive from host
+[DPLAY, 2302, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[UDP, 2301] Ready to receive from client
+[DPLAY, 2302, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2301] Ready to receive from host
+[UDP, 2302] init done.
+[DPLAY, 2303, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2303, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2302] Ready to receive from client
+[UDP, 2303] init done.
+[UDP, 2302] Ready to receive from host
+[DPLAY, 2304, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2304, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2304] init done.
+[UDP, 2303] Ready to receive from client
+[DPLAY, 2305, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[UDP, 2303] Ready to receive from host
+[DPLAY, 2305, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2304] Ready to receive from client
+[UDP, 2304] Ready to receive from host
+[UDP, 2305] init done.
+[DPLAY, 2306, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[UDP, 2305] Ready to receive from client
+[DPLAY, 2306, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2305] Ready to receive from host
+[UDP, 2306] init done.
+[DPLAY, 2307, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[UDP, 2306] Ready to receive from client
+[DPLAY, 2307, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2306] Ready to receive from host
+[UDP, 2307] init done.
+[DPLAY, 2308, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2308, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2307] Ready to receive from client
+[UDP, 2308] init done.
+[UDP, 2307] Ready to receive from host
+[DPLAY, 2309, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[UDP, 2308] Ready to receive from host
+[UDP, 2308] Ready to receive from client
+[DPLAY, 2309, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2309] init done.
+[DPLAY, 2310, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2310, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2310] init done.
+[UDP, 2309] Ready to receive from client
+[DPLAY, 2311, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2311, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2309] Ready to receive from host
+[UDP, 2311] init done.
+[DPLAY, 2312, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2312, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2312] init done.
+[UDP, 2310] Ready to receive from client
+[UDP, 2310] Ready to receive from host
+[UDP, 2311] Ready to receive from client
+[DPLAY, 2313, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[UDP, 2311] Ready to receive from host
+[DPLAY, 2313, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2312] Ready to receive from client
+[UDP, 2313] init done.
+[UDP, 2312] Ready to receive from host
+[DPLAY, 2314, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2314, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2314] init done.
+[DPLAY, 2315, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[UDP, 2314] Ready to receive from client
+[DPLAY, 2315, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2314] Ready to receive from host
+[UDP, 2313] Ready to receive from client
+[UDP, 2313] Ready to receive from host
+[UDP, 2315] init done.
+[DPLAY, 2316, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2316, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2316] init done.
+[UDP, 2315] Ready to receive from client
+[UDP, 2315] Ready to receive from host
+[DPLAY, 2317, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[UDP, 2316] Ready to receive from client
+[UDP, 2316] Ready to receive from host
+[DPLAY, 2317, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2317] init done.
+[DPLAY, 2318, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2318, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2318] init done.
+[DPLAY, 2319, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2319, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2319] init done.
+[DPLAY, 2320, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2320, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2320] init done.
+[DPLAY, 2321, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2321, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2321] init done.
+[DPLAY, 2322, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2322, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2322] init done.
+[DPLAY, 2323, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2323, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2323] init done.
+[DPLAY, 2324, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2324, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2324] init done.
+[DPLAY, 2325, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2325, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2325] init done.
+[DPLAY, 2326, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2326, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2326] init done.
+[DPLAY, 2327, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2327, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2327] init done.
+[DPLAY, 2328, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2328, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2328] init done.
+[DPLAY, 2329, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2329, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2329] init done.
+[DPLAY, 2330, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2330, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2330] init done.
+[DPLAY, 2331, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2331, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2331] init done.
+[DPLAY, 2332, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2332, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2332] init done.
+[DPLAY, 2333, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2333, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2333] init done.
+[DPLAY, 2334, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2334, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2334] init done.
+[DPLAY, 2335, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2335, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2335] init done.
+[DPLAY, 2336, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2336, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2336] init done.
+[DPLAY, 2337, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2337, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2337] init done.
+[DPLAY, 2338, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2338, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2338] init done.
+[DPLAY, 2339, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2339, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2339] init done.
+[DPLAY, 2340, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2340, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2340] init done.
+[DPLAY, 2341, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2341, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2341] init done.
+[DPLAY, 2342, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2342, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2342] init done.
+[DPLAY, 2343, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2343, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2343] init done.
+[DPLAY, 2344, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2344, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2344] init done.
+[DPLAY, 2345, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2345, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2345] init done.
+[DPLAY, 2346, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2346, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2346] init done.
+[DPLAY, 2347, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2347, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2347] init done.
+[DPLAY, 2348, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2348, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2348] init done.
+[DPLAY, 2349, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2349, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2349] init done.
+[DPLAY, 2350, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2350, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2350] init done.
+[DPLAY, 2351, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2351, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2351] init done.
+[DPLAY, 2352, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2352, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2352] init done.
+[DPLAY, 2353, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2353, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2353] init done.
+[DPLAY, 2354, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2354, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2354] init done.
+[DPLAY, 2355, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2355, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2355] init done.
+[DPLAY, 2356, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2356, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2356] init done.
+[DPLAY, 2357, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2357, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2357] init done.
+[DPLAY, 2358, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2358, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2358] init done.
+[DPLAY, 2359, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2359, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2359] init done.
+[DPLAY, 2360, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2360, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2360] init done.
+[DPLAY, 2361, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2361, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2361] init done.
+[DPLAY, 2362, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2362, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2362] init done.
+[DPLAY, 2363, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2363, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2363] init done.
+[DPLAY, 2364, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2364, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2364] init done.
+[DPLAY, 2365, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2365, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2365] init done.
+[DPLAY, 2366, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2366, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2366] init done.
+[DPLAY, 2367, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2367, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2367] init done.
+[DPLAY, 2368, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2368, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2368] init done.
+[DPLAY, 2369, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2369, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2369] init done.
+[DPLAY, 2370, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2370, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2370] init done.
+[DPLAY, 2371, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2371, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2371] init done.
+[DPLAY, 2372, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2372, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2372] init done.
+[DPLAY, 2373, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2373, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2373] init done.
+[DPLAY, 2374, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2374, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2374] init done.
+[DPLAY, 2375, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2375, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2375] init done.
+[DPLAY, 2376, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2376, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2376] init done.
+[DPLAY, 2377, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2377, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2377] init done.
+[DPLAY, 2378, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2378, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2378] init done.
+[DPLAY, 2379, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2379, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2379] init done.
+[DPLAY, 2380, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2380, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2380] init done.
+[DPLAY, 2381, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2381, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2381] init done.
+[DPLAY, 2382, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2382, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2382] init done.
+[DPLAY, 2383, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2383, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2383] init done.
+[DPLAY, 2384, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2384, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2384] init done.
+[DPLAY, 2385, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2385, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2385] init done.
+[DPLAY, 2386, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2386, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2386] init done.
+[DPLAY, 2387, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2387, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2387] init done.
+[DPLAY, 2388, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2388, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2388] init done.
+[DPLAY, 2389, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2389, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2389] init done.
+[DPLAY, 2390, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2390, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2390] init done.
+[DPLAY, 2391, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2391, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2391] init done.
+[DPLAY, 2392, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2392, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2392] init done.
+[DPLAY, 2393, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2393, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2393] init done.
+[DPLAY, 2394, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2394, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2394] init done.
+[DPLAY, 2395, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2395, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2395] init done.
+[DPLAY, 2396, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2396, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2396] init done.
+[DPLAY, 2397, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2397, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2397] init done.
+[DPLAY, 2398, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2398, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2398] init done.
+[DPLAY, 2399, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2399, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2399] init done.
+[DPLAY, 2400, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2400, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 2400] init done.
+[UDP, 2332] Ready to receive from client
+[UDP, 2323] Ready to receive from client
+[UDP, 2331] Ready to receive from client
+[UDP, 2334] Ready to receive from client
+[UDP, 2372] Ready to receive from client
+[UDP, 2338] Ready to receive from client
+[UDP, 2363] Ready to receive from client
+[UDP, 2364] Ready to receive from client
+[UDP, 2357] Ready to receive from client
+[UDP, 2332] Ready to receive from host
+[UDP, 2353] Ready to receive from host
+[UDP, 2331] Ready to receive from host
+[UDP, 2322] Ready to receive from client
+[UDP, 2322] Ready to receive from host
+[UDP, 2341] Ready to receive from client
+[UDP, 2350] Ready to receive from client
+[UDP, 2373] Ready to receive from client
+[UDP, 2337] Ready to receive from client
+[UDP, 2390] Ready to receive from host
+[UDP, 2330] Ready to receive from client
+[UDP, 2355] Ready to receive from client
+[UDP, 2361] Ready to receive from host
+[UDP, 2352] Ready to receive from host
+[UDP, 2321] Ready to receive from client
+[UDP, 2373] Ready to receive from host
+[UDP, 2337] Ready to receive from host
+[UDP, 2371] Ready to receive from client
+[UDP, 2353] Ready to receive from client
+[UDP, 2365] Ready to receive from host
+[UDP, 2370] Ready to receive from host
+[UDP, 2356] Ready to receive from client
+[UDP, 2329] Ready to receive from client
+[UDP, 2338] Ready to receive from host
+[UDP, 2341] Ready to receive from host
+[UDP, 2321] Ready to receive from host
+[UDP, 2388] Ready to receive from host
+[UDP, 2320] Ready to receive from client
+[UDP, 2362] Ready to receive from client
+[UDP, 2359] Ready to receive from host
+[UDP, 2357] Ready to receive from host
+[UDP, 2346] Ready to receive from client
+[UDP, 2329] Ready to receive from host
+[UDP, 2362] Ready to receive from host
+[UDP, 2324] Ready to receive from client
+[UDP, 2354] Ready to receive from client
+[UDP, 2369] Ready to receive from host
+[UDP, 2368] Ready to receive from host
+[UDP, 2343] Ready to receive from client
+[UDP, 2389] Ready to receive from host
+[UDP, 2317] Ready to receive from host
+[UDP, 2318] Ready to receive from client
+[UDP, 2346] Ready to receive from host
+[UDP, 2354] Ready to receive from host
+[UDP, 2327] Ready to receive from client
+[UDP, 2359] Ready to receive from client
+[UDP, 2339] Ready to receive from client
+[UDP, 2390] Ready to receive from client
+[UDP, 2334] Ready to receive from host
+[UDP, 2361] Ready to receive from client
+[UDP, 2352] Ready to receive from client
+[UDP, 2326] Ready to receive from client
+[UDP, 2364] Ready to receive from host
+[UDP, 2365] Ready to receive from client
+[UDP, 2339] Ready to receive from host
+[UDP, 2388] Ready to receive from client
+[UDP, 2367] Ready to receive from client
+[UDP, 2358] Ready to receive from client
+[UDP, 2368] Ready to receive from client
+[UDP, 2340] Ready to receive from client
+[UDP, 2369] Ready to receive from client
+[UDP, 2326] Ready to receive from host
+[UDP, 2371] Ready to receive from host
+[UDP, 2367] Ready to receive from host
+[UDP, 2356] Ready to receive from host
+[UDP, 2317] Ready to receive from client
+[UDP, 2324] Ready to receive from host
+[UDP, 2360] Ready to receive from host
+[UDP, 2370] Ready to receive from client
+[UDP, 2323] Ready to receive from host
+[UDP, 2318] Ready to receive from host
+[UDP, 2327] Ready to receive from host
+[UDP, 2330] Ready to receive from host
+[UDP, 2355] Ready to receive from host
+[UDP, 2350] Ready to receive from host
+[UDP, 2342] Ready to receive from host
+[UDP, 2372] Ready to receive from host
+[UDP, 2328] Ready to receive from host
+[UDP, 2358] Ready to receive from host
+[UDP, 2389] Ready to receive from client
+[UDP, 2343] Ready to receive from host
+[UDP, 2328] Ready to receive from client
+[UDP, 2363] Ready to receive from host
+[UDP, 2340] Ready to receive from host
+[UDP, 2360] Ready to receive from client
+[UDP, 2320] Ready to receive from host
+[UDP, 2342] Ready to receive from client
+[UDP, 2347] Ready to receive from client
+[UDP, 2377] Ready to receive from client
+[UDP, 2383] Ready to receive from client
+[UDP, 2378] Ready to receive from client
+[UDP, 2395] Ready to receive from client
+[UDP, 2399] Ready to receive from client
+[UDP, 2396] Ready to receive from host
+[UDP, 2384] Ready to receive from client
+[UDP, 2376] Ready to receive from client
+[UDP, 2400] Ready to receive from client
+[UDP, 2391] Ready to receive from client
+[UDP, 2394] Ready to receive from client
+[UDP, 2398] Ready to receive from host
+[UDP, 2399] Ready to receive from host
+[UDP, 2325] Ready to receive from client
+[UDP, 2383] Ready to receive from host
+[UDP, 2380] Ready to receive from client
+[UDP, 2400] Ready to receive from host
+[UDP, 2378] Ready to receive from host
+[UDP, 2335] Ready to receive from client
+[UDP, 2319] Ready to receive from host
+[UDP, 2393] Ready to receive from client
+[UDP, 2384] Ready to receive from host
+[UDP, 2376] Ready to receive from host
+[UDP, 2382] Ready to receive from host
+[UDP, 2379] Ready to receive from host
+[UDP, 2387] Ready to receive from host
+[UDP, 2396] Ready to receive from client
+[UDP, 2351] Ready to receive from client
+[UDP, 2325] Ready to receive from host
+[UDP, 2380] Ready to receive from host
+[UDP, 2385] Ready to receive from host
+[UDP, 2333] Ready to receive from client
+[UDP, 2393] Ready to receive from host
+[UDP, 2374] Ready to receive from host
+[UDP, 2366] Ready to receive from client
+[UDP, 2333] Ready to receive from host
+[UDP, 2348] Ready to receive from host
+[UDP, 2366] Ready to receive from host
+[UDP, 2381] Ready to receive from host
+[UDP, 2392] Ready to receive from client
+[UDP, 2398] Ready to receive from client
+[UDP, 2349] Ready to receive from client
+[UDP, 2382] Ready to receive from client
+[UDP, 2394] Ready to receive from host
+[UDP, 2377] Ready to receive from host
+[UDP, 2349] Ready to receive from host
+[UDP, 2385] Ready to receive from client
+[UDP, 2375] Ready to receive from client
+[UDP, 2336] Ready to receive from host
+[UDP, 2386] Ready to receive from client
+[UDP, 2335] Ready to receive from host
+[UDP, 2345] Ready to receive from host
+[UDP, 2374] Ready to receive from client
+[UDP, 2386] Ready to receive from host
+[UDP, 2351] Ready to receive from host
+[UDP, 2375] Ready to receive from host
+[UDP, 2395] Ready to receive from host
+[UDP, 2347] Ready to receive from host
+[UDP, 2345] Ready to receive from client
+[UDP, 2319] Ready to receive from client
+[UDP, 2387] Ready to receive from client
+[UDP, 2391] Ready to receive from host
+[UDP, 2392] Ready to receive from host
+[UDP, 2348] Ready to receive from client
+[UDP, 2381] Ready to receive from client
+[UDP, 2397] Ready to receive from host
+[UDP, 2344] Ready to receive from client
+[UDP, 2397] Ready to receive from client
+[UDP, 2379] Ready to receive from client
+[UDP, 2344] Ready to receive from host
+[UDP, 2336] Ready to receive from client
+[UDP, 47624, 10.30.0.1->10.20.0.2 as 10.20.0.1] 10.20.0.2: 3400b0fa020008fc000000000000000000000000706c617902000e0021d354dee6a1d0118e7600608c96c1480000000001000000
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] accepted connection from 2300
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] client peer: 2300 | host peer: ('10.30.0.2', 37983)
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] client: 7c00b0fa020008fc0a1400010000000000000000706c617901000e005000000044000000c3226a7877f3e140908613737d8f10f921d354dee6a1d0118e7600608c96c148020000000100000000000000000000009d2aa50500000000000000000000000000000000000000005c000000440045004200550047000000
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] accepted connection from 2300
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] client peer: 2300 | host peer: ('10.20.0.2', 36571)
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] client: 2000b0fa020008fc0a1e00010000000000000000706c617905000e0009000000
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] client: 4400b0fa020008fc0a1400010000000000000000706c617907000e009e2aa405000000000000000000000000000000000000000000000000000000000000000000000000
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] client: 8600b0fa020008fc0a1e00010000000000000000706c617913000e00000000009e2aa405000000001c0000006c00000050000000090000009e2aa40500000000000000002000000000000000000000009e2aa405300000000e00000000000000020008fc0000000000000000000000000200092e00000000000000000000000000009d2aa505
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] client: 7c01b0fa020008fc0a1400010000000000000000706c617929000e00030000000100000080000000000000002400000074000000000000005000000044000000c3226a7877f3e140908613737d8f10f921d354dee6a1d0118e7600608c96c148020000000100000000000000000000009d2aa505000000000000000000000000000000000000000044004500420055004700000010000000050000009e2aa405040000000e00000020020008fc0a1e000100000000000000000200092e0a1e00010000000000000000100000000f0000009d2aa405040000000e00000020020008fc0000000000000000000000000200092e000000000000000000000000100000000c0000009f2aa405070000009d2aa405480053005400000054006800650048006f0073007400000020020008fc0000000000000000000000000200092e00000000000000000000000010000000480000009c2aa405430000009d2aa405440045004200550047000000440045004200550047000000019f2aa405
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] client: 2000b0fa020008fc0a1e00010000000000000000706c617905000e0008000000
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] client: 4400b0fa020008fc0a1400010000000000000000706c617907000e00992aa405000000000000000000000000000000000000000000000000000000000000000000000000
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] client: a200b0fa020008fc0a1e00010000000000000000706c617908000e0000000000992aa405000000001c000000000000006c00000008000000992aa40508000000140000002000000000000000000000009e2aa405300000000e0000000000000043004c004e00000054006800650043006c00690065006e0074000000020008fc0000000000000000000000000200092e000000000000000000000000000000000000
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] client: 3000b0fa020008fc0a1e00010000000000000000706c61790d000e0000000000992aa4059c2aa4050000000000000000
+[UDP, 2350, 10.20.0.1->10.30.0.2 as 10.30.0.1] 10.30.0.2: 9f2aa4059c2aa405d90700002c0000000200000000000000992aa405010000009f2aa405ffffffffffffffffffffffffffffffff
+size: 10911, dplay_id: 0x05a4, action: 
+[host,2350]      len: 52 id0: 9f2aa405 id1: 9c2aa405 action: 0x7d9 anno_length: 44 remaining: 
+0200000000000000992aa405010000009f2aa405ffffffffffffffffffffffffffffffff
+[UDP, 2350, 10.20.0.1->10.30.0.2 as 10.30.0.1] 10.30.0.2: 2400b0fa020008fc000000000000000000000000706c617916000e009d2aa4059a65a505
+[UDP, 2350, 10.30.0.1->10.20.0.2 as 10.20.0.1] 10.20.0.2: 2400b0fa020008fc000000000000000000000000706c617917000e009e2aa4059a65a505
+[UDP, 2350, 10.30.0.1->10.20.0.2 as 10.20.0.1] 10.20.0.2: 2400b0fa020008fc000000000000000000000000706c617916000e009e2aa405898ba505
+[UDP, 2350, 10.20.0.1->10.30.0.2 as 10.30.0.1] 10.30.0.2: 2400b0fa020008fc000000000000000000000000706c617917000e009d2aa405898ba505
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] client: 3000b0fa020008fc0a1e00010000000000000000706c61790e000e0000000000992aa4059c2aa4050000000000000000
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] client: 3000b0fa020008fc0a1e00010000000000000000706c61790b000e0000000000992aa4050000000000000000000000003000b0fa020008fc000000000000000000000000706c61790b000e00000000009e2aa405000000000000000000000000
+Exception in thread Thread-510 (handle_host):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+Exception in thread Thread-511 (handle_client):
+    self._target(*self._args, **self._kwargs)
+  File "/home/david/Projects/Personal/Anno1602-network-analysis-and-reverse-engineering/1602ProxyPython/main.py", line 80, in handle_host
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    data_host = bytearray(host_socket.recv(config.BUFFER_SIZE))
+ConnectionResetError: [Errno 104] Connection reset by peer
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/david/Projects/Personal/Anno1602-network-analysis-and-reverse-engineering/1602ProxyPython/main.py", line 64, in handle_client
+    data_client = bytearray(client_socket.recv(config.BUFFER_SIZE))
+ConnectionResetError: [Errno 104] Connection reset by peer
+Exception in thread Thread-512 (handle_host):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+Exception in thread Thread-509 (handle_client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/david/Projects/Personal/Anno1602-network-analysis-and-reverse-engineering/1602ProxyPython/main.py", line 64, in handle_client
+    self._target(*self._args, **self._kwargs)
+    data_client = bytearray(client_socket.recv(config.BUFFER_SIZE))
+  File "/home/david/Projects/Personal/Anno1602-network-analysis-and-reverse-engineering/1602ProxyPython/main.py", line 80, in handle_host
+ConnectionResetError: [Errno 104] Connection reset by peer
+    data_host = bytearray(host_socket.recv(config.BUFFER_SIZE))
+ConnectionResetError: [Errno 104] Connection reset by peer
+^CException ignored in: <module 'threading' from '/usr/lib/python3.10/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1567, in _shutdown
+    lock.acquire()
+KeyboardInterrupt: 
+➜  1602ProxyPython git:(main) ✗ 
+
+
+
+
+
+
+
+
+
+
+➜  1602ProxyPython git:(main) ✗ python3 main.py
+[UDP, 47624] init done.
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[UDP, 47624] Ready to receive from client
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 47624] Ready to receive from host
+[UDP, 2350] init done.
+[UDP, 2350] Ready to receive from client
+[UDP, 2350] Ready to receive from host
+[UDP, 47624, 10.30.0.1->10.20.0.2 as 10.20.0.1] 10.20.0.2: 3400b0fa020008fc000000000000000000000000706c617902000e0021d354dee6a1d0118e7600608c96c1480000000001000000
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] accepted connection from 2300
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] client peer: 2300 | host peer: ('10.30.0.2', 45057)
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] client: 7c00b0fa020008fc0a1400010000000000000000706c617901000e005000000044000000d377e6323992774bacfff65c738bf9a621d354dee6a1d0118e7600608c96c1480200000001000000000000000000000026bf250300000000000000000000000000000000000000005c000000440045004200550047000000
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] accepted connection from 2300
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] client peer: 2300 | host peer: ('10.20.0.2', 45649)
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] client: 2000b0fa020008fc0a1e00010000000000000000706c617905000e0009000000
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] client: 4400b0fa020008fc0a1400010000000000000000706c617907000e0025bf2403000000000000000000000000000000000000000000000000000000000000000000000000
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] client: 8600b0fa020008fc0a1e00010000000000000000706c617913000e000000000025bf2403000000001c0000006c000000500000000900000025bf2403000000000000000020000000000000000000000025bf2403300000000e00000000000000020008fc0000000000000000000000000200092e000000000000000000000000000026bf2503
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] client: 7c01b0fa020008fc0a1400010000000000000000706c617929000e00030000000100000080000000000000002400000074000000000000005000000044000000d377e6323992774bacfff65c738bf9a621d354dee6a1d0118e7600608c96c1480200000001000000000000000000000026bf25030000000000000000000000000000000000000000440045004200550047000000100000000500000025bf2403040000000e00000020020008fc0a1e000100000000000000000200092e0a1e00010000000000000000100000000f00000026bf2403040000000e00000020020008fc0000000000000000000000000200092e000000000000000000000000100000000c00000024bf24030700000026bf2403480053005400000054006800650048006f0073007400000020020008fc0000000000000000000000000200092e000000000000000000000000100000004800000027bf24034300000026bf24034400450042005500470000004400450042005500470000000124bf2403
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] client: 2000b0fa020008fc0a1e00010000000000000000706c617905000e0008000000
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] client: 4400b0fa020008fc0a1400010000000000000000706c617907000e0022bf2403000000000000000000000000000000000000000000000000000000000000000000000000
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] client: a200b0fa020008fc0a1e00010000000000000000706c617908000e000000000022bf2403000000001c000000000000006c0000000800000022bf2403080000001400000020000000000000000000000025bf2403300000000e0000000000000043004c004e00000054006800650043006c00690065006e0074000000020008fc0000000000000000000000000200092e000000000000000000000000000000000000
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] client: 3000b0fa020008fc0a1e00010000000000000000706c61790d000e000000000022bf240327bf24030000000000000000
+[UDP, 2350, 10.20.0.1->10.30.0.2 as 10.30.0.1] 10.30.0.2: 24bf240327bf2403d90700002c000000020000000000000022bf24030100000024bf2403ffffffffffffffffffffffffffffffff
+size: 48932, dplay_id: 0x0324, action: 
+[host,2350]      len: 52 id0: 24bf2403 id1: 27bf2403 action: 0x7d9 anno_length: 44 remaining: 
+020000000000000022bf24030100000024bf2403ffffffffffffffffffffffffffffffff
+[UDP, 2350, 10.20.0.1->10.30.0.2 as 10.30.0.1] 10.30.0.2: 2400b0fa020008fc000000000000000000000000706c617916000e0026bf2403a8fd2d03
+[UDP, 2350, 10.30.0.1->10.20.0.2 as 10.20.0.1] 10.20.0.2: 2400b0fa020008fc000000000000000000000000706c617917000e0025bf2403a8fd2d03
+[UDP, 2350, 10.20.0.1->10.30.0.2 as 10.30.0.1] 10.30.0.2: 24bf240327bf24034f0800001c000000010000000c00000000ff00003600000044600000
+size: 48932, dplay_id: 0x0324, action: 
+
+[host,2350]      len: 36 id0: 24bf2403 id1: 27bf2403 action: 0x84f anno_length: 28 remaining: 
+010000000c00000000ff00003600000044600000
+Amount: 24644 0x6044 0b110000001000100
+[UDP, 2350, 10.20.0.1->10.30.0.2 as 10.30.0.1] 10.30.0.2: 24bf240327bf24033d08000064000000010001025400000000000000887ad274ff00000002020400000001456e646c6f73737069656c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+size: 48932, dplay_id: 0x0324, action: T
+[host,2350]      len: 108 id0: 24bf2403 id1: 27bf2403 action: 0x83d anno_length: 100 remaining: 
+010001025400000000000000887ad274ff00000002020400000001456e646c6f73737069656c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+[UDP, 2350, 10.20.0.1->10.30.0.2 as 10.30.0.1] 10.30.0.2: 24bf240327bf24034f0800001c000000010000000c00000000ff00005905000044600000
+size: 48932, dplay_id: 0x0324, action: 
+
+[host,2350]      len: 36 id0: 24bf2403 id1: 27bf2403 action: 0x84f anno_length: 28 remaining: 
+010000000c00000000ff00005905000044600000
+Amount: 24644 0x6044 0b110000001000100
+[UDP, 2350, 10.20.0.1->10.30.0.2 as 10.30.0.1] 10.30.0.2: 24bf240327bf24034f0800001c000000010000000c00000000ff00005902000001000000
+size: 48932, dplay_id: 0x0324, action: 
+
+[host,2350]      len: 36 id0: 24bf2403 id1: 27bf2403 action: 0x84f anno_length: 28 remaining: 
+010000000c00000000ff00005902000001000000
+Amount: 1 0x1 0b1
+[UDP, 2350, 10.20.0.1->10.30.0.2 as 10.30.0.1] 10.30.0.2: 2400b0fa020008fc000000000000000000000000706c617916000e0026bf240342382e03
+[UDP, 2350, 10.30.0.1->10.20.0.2 as 10.20.0.1] 10.20.0.2: 2400b0fa020008fc000000000000000000000000706c617917000e0025bf240342382e03
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] client: 3000b0fa020008fc0a1400010000000000000000706c61790e000e000000000024bf240327bf24030000000000000000
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] client: 3000b0fa020008fc0a1400010000000000000000706c61790b000e000000000024bf2403000000000000000000000000
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] client: 3000b0fa020008fc0a1400010000000000000000706c61790b000e000000000026bf2403000000000000000000000000
+Exception in thread Thread-12 (handle_host):
+Exception in thread Thread-9 (handle_client):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/david/Projects/Personal/Anno1602-network-analysis-and-reverse-engineering/1602ProxyPython/main.py", line 80, in handle_host
+    self._target(*self._args, **self._kwargs)
+  File "/home/david/Projects/Personal/Anno1602-network-analysis-and-reverse-engineering/1602ProxyPython/main.py", line 64, in handle_client
+    data_host = bytearray(host_socket.recv(config.BUFFER_SIZE))
+    data_client = bytearray(client_socket.recv(config.BUFFER_SIZE))
+ConnectionResetError: [Errno 104] Connection reset by peer
+ConnectionResetError: [Errno 104] Connection reset by peer
+Exception in thread Thread-10 (handle_host):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+Exception in thread Thread-11 (handle_client):
+    self.run()
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self._target(*self._args, **self._kwargs)
+  File "/home/david/Projects/Personal/Anno1602-network-analysis-and-reverse-engineering/1602ProxyPython/main.py", line 80, in handle_host
+    data_host = bytearray(host_socket.recv(config.BUFFER_SIZE))
+    self.run()
+ConnectionResetError: [Errno 104] Connection reset by peer
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/david/Projects/Personal/Anno1602-network-analysis-and-reverse-engineering/1602ProxyPython/main.py", line 64, in handle_client
+    data_client = bytearray(client_socket.recv(config.BUFFER_SIZE))
+ConnectionResetError: [Errno 104] Connection reset by peer
+^CException ignored in: <module 'threading' from '/usr/lib/python3.10/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1567, in _shutdown
+    lock.acquire()
+KeyboardInterrupt: 
+➜  1602ProxyPython git:(main) ✗ 

@@ -1,0 +1,44 @@
+version: "3.9"
+
+volumes:
+  db-data:
+  vnc-desktop-data:
+
+services:
+  guacd:
+    image: guacamole/guacd
+    ports:
+      - "4822:4822"
+  guacamole:
+    image: guacamole/guacamole
+    environment:
+      - GUACD_HOSTNAME=guacd
+      - GUACD_PORT=4822
+      - MYSQL_HOSTNAME=db
+      - MYSQL_DATABASE=guacamole
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=guacamole123
+    ports:
+      - "8098:8080"
+    depends_on: [guacd, db]
+  db:
+    image: mariadb:latest
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      - MARIADB_DATABASE=guacamole
+      - MARIADB_ROOT_PASSWORD=guacamole123
+  adminer:
+    image: adminer
+    restart: always
+    depends_on: [db]
+    ports:
+      - 8099:8080
+
+  vnc-desktop-test:
+    image: elestio/docker-desktop-vnc
+    volumes:
+      - vnc-desktop-data:/root/knime-workspace
+      - /dev/shm:/dev/shm
+    ports:
+      - "5900:5900"

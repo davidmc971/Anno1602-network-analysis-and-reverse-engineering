@@ -8,12 +8,18 @@ from importlib import reload
 import parser
 import config
 
+# IP_CLIENT_ORIGIN = '192.168.178.38'
+# IP_HOST_PROXIED = '192.168.178.36'
 IP_CLIENT_ORIGIN = '10.20.0.2'
+IP_HOST_PROXIED = '10.20.0.1'
 # IP_HOST_ORIGIN = '192.168.2.20'
 # IP_CLIENT_PROXIED = '192.168.2.190'
+# IP_HOST_ORIGIN = '192.168.2.36'
+# IP_CLIENT_PROXIED = '192.168.2.110'
+# IP_HOST_ORIGIN = '192.168.0.66'
+# IP_CLIENT_PROXIED = '192.168.0.204'
 IP_HOST_ORIGIN = '10.30.0.2'
 IP_CLIENT_PROXIED = '10.30.0.1'
-IP_HOST_PROXIED = '10.20.0.1'
 # DirectPlay port
 PORT_DPLAY = 47624
 # TCP and UDP game session ports
@@ -64,6 +70,7 @@ class DPlayProxy(Thread):
                             dplay_proxied_ip = self.dplay_proxied_ip
                             addr = list(map(int, dplay_proxied_ip.split('.')))
                             struct.pack_into("<BBBB", data_client, 8, addr[0], addr[1], addr[2], addr[3])
+                            print("[DPLAY, {}] injected proxy ip".format(self.port))
                         if config.VERBOSE_LOGGING:
                             self.log('client', data_client)
                         host_socket.sendall(data_client)
@@ -183,15 +190,23 @@ class UDPProxy(Thread):
         #     teststr += " "
         # print("[{}, TCP] {}: {}".format(self.port, side, teststr))
 
+#! TCP not actually needed for DPLAY
+# proxy_dplay0 = DPlayProxy(IP_HOST_PROXIED, IP_HOST_ORIGIN, PORT_DPLAY, IP_CLIENT_PROXIED)
+# proxy_dplay0.start()
+testproxy3 = UDPProxy(IP_HOST_ORIGIN, IP_CLIENT_ORIGIN, IP_HOST_PROXIED, IP_CLIENT_PROXIED, PORT_DPLAY)
+testproxy3.start()
 
-proxy_dplay0 = DPlayProxy(IP_HOST_PROXIED, IP_HOST_ORIGIN, PORT_DPLAY, IP_CLIENT_PROXIED)
-proxy_dplay0.start()
+# for port in PORT_RANGE_GAME:
+#     testproxy0 = DPlayProxy(IP_CLIENT_PROXIED, IP_CLIENT_ORIGIN, port, IP_HOST_PROXIED)
+#     testproxy0.start()
+#     testproxy1 = DPlayProxy(IP_HOST_PROXIED, IP_HOST_ORIGIN, port, IP_CLIENT_PROXIED)
+#     testproxy1.start()
+#     testproxy2 = UDPProxy(IP_CLIENT_ORIGIN, IP_HOST_ORIGIN, IP_CLIENT_PROXIED, IP_HOST_PROXIED, port)
+#     testproxy2.start()
 
-for port in PORT_RANGE_GAME:
-    testproxy0 = DPlayProxy(IP_CLIENT_PROXIED, IP_CLIENT_ORIGIN, port, IP_HOST_PROXIED)
-    testproxy0.start()
-    testproxy1 = DPlayProxy(IP_HOST_PROXIED, IP_HOST_ORIGIN, port, IP_CLIENT_PROXIED)
-    testproxy1.start()
-    testproxy2 = UDPProxy(IP_CLIENT_ORIGIN, IP_HOST_ORIGIN, IP_CLIENT_PROXIED, IP_HOST_PROXIED, port)
-    testproxy2.start()
-    
+testproxy0 = DPlayProxy(IP_CLIENT_PROXIED, IP_CLIENT_ORIGIN, 2300, IP_HOST_PROXIED)
+testproxy0.start()
+testproxy1 = DPlayProxy(IP_HOST_PROXIED, IP_HOST_ORIGIN, 2300, IP_CLIENT_PROXIED)
+testproxy1.start()
+testproxy2 = UDPProxy(IP_CLIENT_ORIGIN, IP_HOST_ORIGIN, IP_CLIENT_PROXIED, IP_HOST_PROXIED, 2350)
+testproxy2.start()
