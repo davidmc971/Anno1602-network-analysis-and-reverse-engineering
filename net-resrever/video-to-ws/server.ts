@@ -62,12 +62,12 @@ videoPipe?.on("drain", () => console.log("DRAIN VIDEO pls"));
 
 let pngBuffer: number[] = [];
 let pngIndex = 0;
+let match = 0;
 const pngChunkStream = new Transform({
   transform(chunk: Buffer, _, callback) {
     // console.log(`[${chalk.greenBright("VIDEO CHUNK")}]`, chunk.length);
     pngBuffer.push(...chunk);
 
-    let match = 0;
     for (; pngIndex < pngBuffer.length; pngIndex++) {
       const currentByte = pngBuffer[pngIndex];
 
@@ -116,8 +116,12 @@ app.get("/", (req, res) => {
 
 ws.on("connection", (socket) => {
   console.log(chalk.bgGreenBright("WS CONNECT"));
-  pngBase64EncoderStream.on("data", (chunk: Buffer) => {
+  const listener = (chunk: Buffer) => {
     socket.send(chunk);
+  };
+  pngBase64EncoderStream.on("data", listener);
+  socket.on("close", () => {
+    pngBase64EncoderStream.off("data", listener);
   });
 });
 
