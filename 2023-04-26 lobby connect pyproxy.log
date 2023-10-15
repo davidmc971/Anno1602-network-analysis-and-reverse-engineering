@@ -1,0 +1,90 @@
+[UDP, 47624] init done.
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] init done.
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] init done.
+[UDP, 47624] Ready to receive from client
+[UDP, 2350] init done.
+[UDP, 47624] Ready to receive from host
+[UDP, 2350] Ready to receive from client
+[UDP, 2350] Ready to receive from host
+[UDP, 47624, 10.30.0.1->10.20.0.2 as 10.20.0.1] 10.20.0.2: 3400b0fa020008fc000000000000000000000000706c617902000e0021d354dee6a1d0118e7600608c96c1480000000001000000
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] accepted connection from 2300
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] client peer: 2300 | host peer: ('10.30.0.2', 40983)
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] client: 7c00b0fa020008fc0a1400010000000000000000706c617901000e005000000044000000f11a4be5229dda45b7afbfa89735b5af21d354dee6a1d0118e7600608c96c148020
+000000100000000000000000000001c28480300000000000000000000000000000000000000005c000000440045004200550047000000                                                                                       [DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] accepted connection from 2300
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] client peer: 2300 | host peer: ('10.20.0.2', 33983)
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] client: 2000b0fa020008fc0a1e00010000000000000000706c617905000e0009000000
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] client: 4400b0fa020008fc0a1400010000000000000000706c617907000e001f284903000000000000000000000000000000000000000000000000000000000000000000000000
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] client: 8600b0fa020008fc0a1e00010000000000000000706c617913000e00000000001f284903000000001c0000006c00000050000000090000001f2849030000000000000000200
+0000000000000000000001f284903300000000e00000000000000020008fc0000000000000000000000000200092e00000000000000000000000000001c284803                                                                   [DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] client: 7c01b0fa020008fc0a1400010000000000000000706c617929000e00030000000100000080000000000000002400000074000000000000005000000044000000f11a4be5229
+dda45b7afbfa89735b5af21d354dee6a1d0118e7600608c96c148020000000100000000000000000000001c284803000000000000000000000000000000000000000044004500420055004700000010000000050000001f284903040000000e00000020020008fc0a1e000100000000000000000200092e0a1e00010000000000000000100000000f0000001c284903040000000e00000020020008fc0000000000000000000000000200092e000000000000000000000000100000000c0000001e284903070000001c284903480053005400000054006800650048006f0073007400000020020008fc0000000000000000000000000200092e00000000000000000000000010000000480000001d284903430000001c284903440045004200550047000000440045004200550047000000011e284903                                                                                                                                                                   [DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] client: 2000b0fa020008fc0a1e00010000000000000000706c617905000e0008000000
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.30.0.1->10.20.0.2 as 10.20.0.1] client: 4400b0fa020008fc0a1400010000000000000000706c617907000e0018284903000000000000000000000000000000000000000000000000000000000000000000000000
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] client: a200b0fa020008fc0a1e00010000000000000000706c617908000e000000000018284903000000001c000000000000006c00000008000000182849030800000014000000200
+0000000000000000000001f284903300000000e0000000000000043004c004e00000054006800650043006c00690065006e0074000000020008fc0000000000000000000000000200092e000000000000000000000000000000000000           [DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] client: 3000b0fa020008fc0a1e00010000000000000000706c61790d000e0000000000182849031d2849030000000000000000
+[UDP, 2350, 10.20.0.1->10.30.0.2 as 10.30.0.1] 10.30.0.2: 1e2849031d284903d90700002c000000020000000000000018284903010000001e284903ffffffffffffffffffffffffffffffff
+size: 10270, dplay_id: 0x0349, action: 
+[host,2350]      len: 52 id0: 1e284903 id1: 1d284903 action: 0x7d9 anno_length: 44 remaining: 
+020000000000000018284903010000001e284903ffffffffffffffffffffffffffffffff
+[UDP, 2350, 10.20.0.1->10.30.0.2 as 10.30.0.1] 10.30.0.2: 2400b0fa020008fc000000000000000000000000706c617916000e001c284903aa304903
+[UDP, 2350, 10.30.0.1->10.20.0.2 as 10.20.0.1] 10.20.0.2: 2400b0fa020008fc000000000000000000000000706c617917000e001f284903aa304903
+[UDP, 2350, 10.30.0.1->10.20.0.2 as 10.20.0.1] 10.20.0.2: 2400b0fa020008fc000000000000000000000000706c617916000e001f284903dc604903
+[UDP, 2350, 10.20.0.1->10.30.0.2 as 10.30.0.1] 10.30.0.2: 2400b0fa020008fc000000000000000000000000706c617917000e001c284903dc604903
+[UDP, 2350, 10.20.0.1->10.30.0.2 as 10.30.0.1] 10.30.0.2: 2400b0fa020008fc000000000000000000000000706c617916000e001c28490391884903
+[UDP, 2350, 10.30.0.1->10.20.0.2 as 10.20.0.1] 10.20.0.2: 2400b0fa020008fc000000000000000000000000706c617917000e001f28490391884903
+[UDP, 2350, 10.30.0.1->10.20.0.2 as 10.20.0.1] 10.20.0.2: 2400b0fa020008fc000000000000000000000000706c617916000e001f284903c2b84903
+[UDP, 2350, 10.20.0.1->10.30.0.2 as 10.30.0.1] 10.30.0.2: 2400b0fa020008fc000000000000000000000000706c617917000e001c284903c2b84903
+[UDP, 2350, 10.20.0.1->10.30.0.2 as 10.30.0.1] 10.30.0.2: 2400b0fa020008fc000000000000000000000000706c617916000e001c28490375e04903
+[UDP, 2350, 10.30.0.1->10.20.0.2 as 10.20.0.1] 10.20.0.2: 2400b0fa020008fc000000000000000000000000706c617917000e001f28490375e04903
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] client: 3000b0fa020008fc0a1e00010000000000000000706c61790e000e0000000000182849031d2849030000000000000000
+[DPLAY, 2300] injected proxy ip
+[DPLAY, 2300, 10.20.0.1->10.30.0.2 as 10.30.0.1] client: 3000b0fa020008fc0a1e00010000000000000000706c61790b000e0000000000182849030000000000000000000000003000b0fa020008fc000000000000000000000000706
+c61790b000e00000000001f284903000000000000000000000000                                                                                                                                               Exception in thread Thread-10 (handle_host):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+Exception in thread Thread-11 (handle_client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/david/Projects/Personal/Anno1602-network-analysis-and-reverse-engineering/1602ProxyPython/main.py", line 80, in handle_host
+    self._target(*self._args, **self._kwargs)
+  File "/home/david/Projects/Personal/Anno1602-network-analysis-and-reverse-engineering/1602ProxyPython/main.py", line 64, in handle_client
+    data_host = bytearray(host_socket.recv(config.BUFFER_SIZE))
+ConnectionResetError: [Errno 104] Connection reset by peer
+    data_client = bytearray(client_socket.recv(config.BUFFER_SIZE))
+ConnectionResetError: [Errno 104] Connection reset by peer
+Exception in thread Thread-12 (handle_host):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+Exception in thread Thread-9 (handle_client):
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+    self.run()
+    self.run()
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+  File "/usr/lib/python3.10/threading.py", line 953, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/david/Projects/Personal/Anno1602-network-analysis-and-reverse-engineering/1602ProxyPython/main.py", line 64, in handle_client
+    self._target(*self._args, **self._kwargs)
+  File "/home/david/Projects/Personal/Anno1602-network-analysis-and-reverse-engineering/1602ProxyPython/main.py", line 80, in handle_host
+    data_host = bytearray(host_socket.recv(config.BUFFER_SIZE))
+ConnectionResetError: [Errno 104] Connection reset by peer
+    data_client = bytearray(client_socket.recv(config.BUFFER_SIZE))
+ConnectionResetError: [Errno 104] Connection reset by peer
+^CException ignored in: <module 'threading' from '/usr/lib/python3.10/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/threading.py", line 1567, in _shutdown
+    lock.acquire()
+KeyboardInterrupt: 
