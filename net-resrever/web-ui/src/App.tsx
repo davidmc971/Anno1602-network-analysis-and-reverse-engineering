@@ -49,20 +49,8 @@ export default function App() {
           border: "1px solid pink",
           aspectRatio: "4 / 3",
           display: "block",
-          flex: 1,
-          maxWidth: "50%",
+          maxWidth: "100%",
           objectFit: "contain",
-        }}
-        src={imgData}
-      ></img>
-      <img
-        style={{
-          border: "1px solid pink",
-          aspectRatio: "4 / 3",
-          display: "block",
-          flex: 1,
-          objectFit: "contain",
-          maxWidth: "50%",
         }}
         src={imgData}
       ></img>
