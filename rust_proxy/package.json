@@ -1,0 +1,14 @@
+{
+  "name": "backend",
+  "description": "Rust backend scripts",
+  "scripts": {
+    "dev": "cargo watch -q -w src -x 'run -q'",
+    "start": "cargo run",
+    "build": "cargo build",
+    "lint": "cargo clippy",
+    "format": "cargo fmt",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Alexander Pfeiffer",
+  "license": "ISC"
+}
