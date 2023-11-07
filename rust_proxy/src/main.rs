@@ -1,4 +1,5 @@
 #![warn(rust_2018_idioms)]
+#![allow(unused)]
 
 mod udp_proxy;
 
@@ -9,7 +10,9 @@ use futures::FutureExt;
 use tokio::io::copy_bidirectional;
 use tokio::net::{TcpListener, TcpStream};
 use tokio::try_join;
-use tracing::{error, info, Level};
+use tokio_stream::StreamExt;
+use tokio_util::codec::{BytesCodec, Decoder};
+use tracing::{debug, error, info, Level};
 use tracing_subscriber::FmtSubscriber;
 
 use crate::udp_proxy::UdpServer;
@@ -24,17 +27,33 @@ async fn tcp_server() -> Result<(), Box<dyn Error>> {
 
     while let Ok((mut inbound, socket_addr)) = tcp_listener.accept().await {
         info!("[TCP] Received connection from {:?}", socket_addr);
-        let mut outbound = TcpStream::connect(anno_host_addr).await?;
 
         tokio::spawn(async move {
-            copy_bidirectional(&mut inbound, &mut outbound)
-                .map(|r| {
-                    if let Err(e) = r {
-                        println!("Failed to transfer; error={}", e);
+            let mut framed = BytesCodec::new().framed(inbound);
+
+            while let Some(message) = framed.next().await {
+                match message {
+                    Ok(bytes) => {
+                        let data = &bytes[..];
+                        debug!("Incoming data:\n{:?}\n{:x?}", data, data)
                     }
-                })
-                .await
+                    Err(err) => info!("Socket closed with error: {:?}", err),
+                }
+            }
+            info!("Socket received FIN packet and closed connection");
         });
+
+        // let mut outbound = TcpStream::connect(anno_host_addr).await?;
+
+        // tokio::spawn(async move {
+        //     copy_bidirectional(&mut inbound, &mut outbound)
+        //         .map(|r| {
+        //             if let Err(e) = r {
+        //                 println!("Failed to transfer; error={}", e);
+        //             }
+        //         })
+        //         .await
+        // });
     }
 
     Ok(())
@@ -44,11 +63,15 @@ async fn tcp_server() -> Result<(), Box<dyn Error>> {
 async fn main() -> Result<(), Box<dyn Error>> {
     let _ = color_eyre::install();
 
-    let subscriber = FmtSubscriber::builder()
-        .with_max_level(Level::INFO)
-        .finish();
+    let mut subscriber = FmtSubscriber::builder();
+    if !cfg!(debug_assertions) {
+        subscriber = subscriber.with_max_level(Level::INFO);
+    } else {
+        subscriber = subscriber.with_max_level(Level::TRACE);
+    }
 
-    tracing::subscriber::set_global_default(subscriber).expect("setting default subscriber failed");
+    tracing::subscriber::set_global_default(subscriber.finish())
+        .expect("setting default subscriber failed");
 
     let addr = env::args()
         .nth(1)

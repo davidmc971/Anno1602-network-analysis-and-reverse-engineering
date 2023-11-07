@@ -1,12 +1,12 @@
 use std::{error::Error, net::SocketAddr};
 
 use tokio::net::UdpSocket;
-use tracing::info;
+use tracing::{debug, info};
 
 pub struct UdpServer {
     socket: UdpSocket,
     buf: Vec<u8>,
-    to_send: Option<(usize, SocketAddr)>,
+    incoming: Option<(usize, SocketAddr)>,
 }
 
 impl UdpServer {
@@ -17,7 +17,7 @@ impl UdpServer {
         Ok(Self {
             socket,
             buf: vec![0; buffer_size],
-            to_send: None,
+            incoming: None,
         })
     }
 
@@ -25,20 +25,23 @@ impl UdpServer {
         let Self {
             socket,
             mut buf,
-            mut to_send,
+            mut incoming,
         } = self;
 
         loop {
-            if let Some((size, peer)) = to_send {
+            if let Some((size, peer)) = incoming {
                 let data = buf[..size].as_mut();
-                data.reverse();
 
-                let amt = socket.send_to(data, &peer).await?;
+                debug!("Incoming data:\n{:?}\n{:x?}", data, data);
 
-                println!("Echoed {}/{} bytes to {}", amt, size, peer);
+                info!("Received {} bytes from {}", size, peer);
+
+                let bytes_sent = socket.send_to(data, "10.30.0.2:47624").await?;
+
+                info!("Sent {} bytes to {}", bytes_sent, "10.30.0.2:47624");
             }
 
-            to_send = Some(socket.recv_from(&mut buf).await?);
+            incoming = Some(socket.recv_from(&mut buf).await?);
         }
     }
 }
