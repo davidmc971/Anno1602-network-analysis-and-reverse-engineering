@@ -3,13 +3,13 @@ use std::{error::Error, net::SocketAddr};
 use tokio::net::UdpSocket;
 use tracing::{debug, info};
 
-pub struct UdpServer {
+pub struct UdpProxy {
     socket: UdpSocket,
     buf: Vec<u8>,
     incoming: Option<(usize, SocketAddr)>,
 }
 
-impl UdpServer {
+impl UdpProxy {
     pub async fn new(address: String, buffer_size: usize) -> Result<Self, Box<dyn Error>> {
         let socket = UdpSocket::bind(&address).await?;
         info!("[UDP] Socket Listening on: {}", socket.local_addr()?);

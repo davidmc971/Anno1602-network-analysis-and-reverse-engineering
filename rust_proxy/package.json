@@ -2,7 +2,7 @@
   "name": "backend",
   "description": "Rust backend scripts",
   "scripts": {
-    "dev": "cargo watch -q -w src -x 'run -q'",
+    "dev": "cargo watch -q -B 1 -w crates/directplay-rs/src -w src -x 'run -q'",
     "start": "cargo run",
     "build": "cargo build",
     "lint": "cargo clippy",
