@@ -7,8 +7,12 @@ mod udp_proxy;
 
 use std::env;
 use std::error::Error;
+use std::io::Cursor;
 use std::net::{IpAddr, Ipv4Addr};
+use std::ops::Shr;
 
+
+use byteorder::{LittleEndian, ReadBytesExt, BigEndian};
 use futures::FutureExt;
 use serde::de::Expected;
 use tokio::io::copy_bidirectional;
@@ -66,21 +70,31 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
             let data = response.data.as_mut_slice();
 
-            let maybe_dplay_signature = &data[20..24];
+            let maybe_dplay_signature = if data.len() >= 28 {&data[20..24]} else {&[]};
 
             if maybe_dplay_signature == [112, 108, 97, 121] {
-                debug!("DPLAY detected, injecting proxy IP");
+                let mut size_and_token_combined_slice = [0_u8; 4];
+                size_and_token_combined_slice.copy_from_slice(&data[0..4]);
+                let size_and_token_combined_u32 = u32::from_le_bytes(size_and_token_combined_slice);
+                let size_u20 = size_and_token_combined_u32 & 0x000fffff;
+                let token_u12 = (size_and_token_combined_u32 & 0xfff00000) >> 20;
+                let mut sock_addr_in_cursor = Cursor::new(&data[4..20]);
+                let sock_addr_in_address_family = sock_addr_in_cursor.read_u16::<LittleEndian>().unwrap();
+                let sock_addr_in_port = sock_addr_in_cursor.read_u16::<BigEndian>().unwrap();
+                let sock_addr_in_ip_address = sock_addr_in_cursor.read_u32::<BigEndian>().unwrap();
+                let mut version_and_command_cursor = Cursor::new(&data[24..28]);
+                // TODO: parse command with enum containing all valid dplay commands
+                let command = version_and_command_cursor.read_u16::<LittleEndian>().unwrap();
+                let version = version_and_command_cursor.read_u16::<LittleEndian>().unwrap();
+                debug!("DPLAY, size: {}, token: 0x{:x}, SockAddr: [AF: 0x{:x}, port: {}, ip_addr: 0x{:x}, signature: play, version: {:?}, command: {:?}]", size_u20, token_u12, sock_addr_in_address_family, sock_addr_in_port, sock_addr_in_ip_address, version, command);
                 if let Some((address, port)) = response.mask_as_address {
                     if address.is_ipv4() {
                         if let IpAddr::V4(address) = address {
+                            debug!("Injecting proxy IP");
                             data[8..12].copy_from_slice(&(address as Ipv4Addr).octets());
                         }
                     }
                 }
-                //    dplay_proxied_ip = self.dplay_proxied_ip
-                //    addr = list(map(int, dplay_proxied_ip.split('.')))
-                //    struct.pack_into("<BBBB", data_client, 8, addr[0], addr[1], addr[2], addr[3])
-                //    print("[DPLAY, {}] injected proxy ip".format(self.port))
             }
 
             debug!("Sending: {:?}", response);
@@ -88,22 +102,6 @@ async fn main() -> Result<(), Box<dyn Error>> {
             let _ = responder.send(response);
         }
     });
-
-    // for i in 0..2 {
-    //     let tx = tx.clone();
-    //     let thread_span = span!(Level::DEBUG, "Thread", num = i);
-    //     tokio::spawn(async move {
-    //         for j in 0..10 {
-    //             let (res_tx, res_rx) = oneshot::channel();
-    //             let _ = tx.send((format!("Message from thread {}: {}", i, j), res_tx)).await;
-    //             let x = res_rx.await;
-    //             let entered = thread_span.enter();
-    //             debug!("{}", x.unwrap());
-    //             drop(entered);
-    //         }
-    //     });
-    // }
-    
 
     let udp_proxy_session_init = UdpProxy::new("0.0.0.0".to_string(), 47624, 1024).await?;
     let tcp_proxy_session_data = TcpProxy::new().await?;

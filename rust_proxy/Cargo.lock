@@ -507,6 +507,7 @@ dependencies = [
 name = "rust_proxy"
 version = "0.1.0"
 dependencies = [
+ "byteorder",
  "bytes",
  "color-eyre",
  "directplay-rs",

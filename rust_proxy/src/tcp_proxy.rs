@@ -100,12 +100,18 @@ impl TcpProxy {
                         let (once_tx, once_rx) = oneshot::channel();
                         let _ = tx_accumulator.send((message, once_tx)).await;
                         let processed_message = once_rx.await.unwrap();
-                        let bytes_written = stream.try_write(&processed_message.data).unwrap();
-                        debug!("Sent {} bytes to host.", bytes_written);
+                        if let Ok(bytes_written) = stream.try_write(&processed_message.data) {
+                            debug!("Sent {} bytes to host.", bytes_written);
+                        }
                     }
                 };
 
                 let _ = tokio::join!(handle_inbound, handle_outbound);
+
+                info!(
+                    "Proxy thread done with connection from {}:{}",
+                    inbound_ip, inbound_port
+                );
             });
         }
 

@@ -6,6 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+byteorder = "1.5"
 bytes = "1.5"
 color-eyre = "0.6"
 directplay-rs = { version = "*", path = "./crates/directplay-rs" }
