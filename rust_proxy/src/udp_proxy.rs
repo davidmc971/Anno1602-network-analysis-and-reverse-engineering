@@ -7,7 +7,7 @@ use tokio::{
     net::UdpSocket,
     sync::{mpsc, oneshot},
 };
-use tracing::{debug, info};
+use tracing::{info, trace};
 
 use crate::Message;
 
@@ -36,8 +36,9 @@ impl UdpProxy {
 
     pub async fn run(
         self,
-        tx: mpsc::Sender<(Message, oneshot::Sender<Message>)>,
+        tx_accumulator: mpsc::Sender<(Message, oneshot::Sender<Message>)>,
     ) -> Result<(), Box<dyn Error>> {
+        #[allow(unused)]
         let Self {
             socket,
             mut buf,
@@ -52,25 +53,41 @@ impl UdpProxy {
 
             let data = buf[..size].as_mut();
 
-            debug!("Incoming data: {} bytes", data.len());
+            trace!("Incoming data: {} bytes", data.len());
 
-            info!("Received {} bytes from {}", size, peer);
+            trace!("Received {} bytes from {}", size, peer);
 
-            let mut bytes_sent = 0;
-
-            let mut target: String;
+            let target_ip: Ipv4Addr;
+            let target_port: u16;
 
             if peer.ip().cmp(&IpAddr::V4(host_addr)).is_eq() {
-                debug!("Message from host.");
-                target = format!("10.20.0.2:{}", port);
-                bytes_sent = socket.send_to(data, &target).await?;
+                trace!("Message from host.");
+                target_ip = Ipv4Addr::new(10, 20, 0, 2);
+                target_port = port;
             } else {
-                debug!("Message from client.");
-                target = format!("10.30.0.2:{}", port);
-                bytes_sent = socket.send_to(data, &target).await?;
+                trace!("Message from client.");
+                target_ip = Ipv4Addr::new(10, 30, 0, 2);
+                target_port = port;
             }
+            let target = format!("{}:{}", target_ip, target_port);
 
-            info!("Sent {} bytes to {}", bytes_sent, target);
+            let (once_tx, once_rx) = oneshot::channel();
+            let _ = tx_accumulator
+                .send((
+                    Message {
+                        data: data.to_vec(),
+                        origin: (peer.ip(), peer.port()),
+                        destination: (IpAddr::V4(target_ip), target_port),
+                        mask_as_address: None,
+                    },
+                    once_tx,
+                ))
+                .await;
+            let processed_message = once_rx.await.unwrap();
+
+            let bytes_sent = socket.send_to(&processed_message.data, &target).await?;
+
+            trace!("Sent {} bytes to {}", bytes_sent, target);
         }
     }
 }

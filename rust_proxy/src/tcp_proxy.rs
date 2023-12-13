@@ -1,16 +1,11 @@
-use std::env;
 use std::error::Error;
-use std::net::{IpAddr, Ipv4Addr, SocketAddrV4};
+use std::net::{IpAddr, Ipv4Addr};
 
-use futures::FutureExt;
-use tokio::io::copy_bidirectional;
 use tokio::net::{TcpListener, TcpStream};
 use tokio::sync::{mpsc, oneshot};
-use tokio::try_join;
 use tokio_stream::StreamExt;
 use tokio_util::codec::{BytesCodec, Decoder};
-use tracing::{debug, error, info, Level};
-use tracing_subscriber::FmtSubscriber;
+use tracing::{error, info, trace};
 
 use crate::Message;
 
@@ -28,7 +23,9 @@ impl TcpProxy {
         let listen_addr = "0.0.0.0:2300";
 
         let anno_host_ip = IpAddr::V4(Ipv4Addr::new(10, 30, 0, 2));
+        #[allow(unused)]
         let anno_host_port = 2300_u16;
+        #[allow(unused)]
         let anno_host_addr_str = "10.30.0.2:2300";
 
         let tcp_listener = TcpListener::bind(listen_addr).await?;
@@ -43,7 +40,7 @@ impl TcpProxy {
         // Anno 1602 has a quirk where we need a socket per direction,
         // meaning we have to handle two directions separately per client.
 
-        while let Ok((mut stream, socket_addr)) = tcp_listener.accept().await {
+        while let Ok((stream, socket_addr)) = tcp_listener.accept().await {
             let tx_accumulator = tx_accumulator.clone();
             tokio::spawn(async move {
                 let inbound_ip = socket_addr.ip();
@@ -72,7 +69,7 @@ impl TcpProxy {
                         match message {
                             Ok(bytes) => {
                                 let data = &bytes[..];
-                                debug!("Received {} bytes from client.", bytes.len());
+                                trace!("Received {} bytes from client.", bytes.len());
                                 let res = tx
                                     .send(Message {
                                         data: data.to_vec(),
@@ -92,16 +89,16 @@ impl TcpProxy {
                 };
                 let tx_accumulator = tx_accumulator.clone();
                 let handle_outbound = async move {
-                    let mut stream = TcpStream::connect(destination_addr_str).await.unwrap();
+                    let stream = TcpStream::connect(destination_addr_str).await.unwrap();
                     while let Some(mut message) = rx.recv().await {
                         let proxy_address = stream.local_addr().unwrap();
                         message.mask_as_address = Some((proxy_address.ip(), proxy_address.port()));
-                        debug!("Proxy processing {} bytes.", message.data.len());
+                        trace!("Proxy processing {} bytes.", message.data.len());
                         let (once_tx, once_rx) = oneshot::channel();
                         let _ = tx_accumulator.send((message, once_tx)).await;
                         let processed_message = once_rx.await.unwrap();
                         if let Ok(bytes_written) = stream.try_write(&processed_message.data) {
-                            debug!("Sent {} bytes to host.", bytes_written);
+                            trace!("Sent {} bytes to host.", bytes_written);
                         }
                     }
                 };
