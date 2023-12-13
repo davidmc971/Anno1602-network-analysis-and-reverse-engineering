@@ -1,57 +1,52 @@
 #![warn(rust_2018_idioms)]
-#![allow(unused)]
 
-mod parser;
 mod tcp_proxy;
 mod udp_proxy;
 
-use std::env;
+#[hot_lib_reloader::hot_module(dylib = "x642")]
+mod x642 {
+    hot_functions_from_file!("x642/src/lib.rs");
+
+    pub use proxy_commons::Message;
+    #[lib_change_subscription]
+    pub fn subscribe() -> hot_lib_reloader::LibReloadObserver {}
+}
+
 use std::error::Error;
-use std::io::Cursor;
-use std::net::{IpAddr, Ipv4Addr};
-use std::ops::Shr;
 
-
-use byteorder::{LittleEndian, ReadBytesExt, BigEndian};
-use futures::FutureExt;
-use serde::de::Expected;
-use tokio::io::copy_bidirectional;
-use tokio::net::{TcpListener, TcpStream};
+pub use proxy_commons::Message;
 use tokio::sync::{mpsc, oneshot};
 use tokio::try_join;
-use tokio_stream::StreamExt;
-use tokio_util::codec::{BytesCodec, Decoder};
-use tracing::{debug, error, info, Level, span, Span};
-use tracing_subscriber::FmtSubscriber;
+use tracing::{trace, error, Level, span};
 
 use crate::tcp_proxy::TcpProxy;
 use crate::udp_proxy::UdpProxy;
 
-#[derive(Debug, Clone)]
-pub struct Message {
-    pub data: Vec<u8>,
-    pub origin: (IpAddr, u16),
-    pub destination: (IpAddr, u16),
-    pub mask_as_address: Option<(IpAddr, u16)>
-}
-
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
+    let lib_observer = x642::subscribe();
+
     {
         // Setting up color_eyre and tracing for debug output
 
         let _ = color_eyre::install();
 
-        let mut subscriber = FmtSubscriber::builder();
+        let mut subscriber = tracing_subscriber::fmt();
         if !cfg!(debug_assertions) {
             subscriber = subscriber.with_max_level(Level::INFO);
         } else {
             subscriber = subscriber.with_max_level(Level::DEBUG);
         }
 
-        tracing::subscriber::set_global_default(subscriber.finish())
-            .expect("setting default subscriber failed");
+        subscriber.init();
     }
+
+    tokio::spawn(async move {
+        loop {
+            x642::set_shared_logger(proxy_commons::shared_logger::build_shared_logger());
+            lib_observer.wait_for_reload();
+        }
+    });
 
     let (tx, mut rx) = 
         // mpsc - multiple producer, single consumer + oneshot to send messages back to origin
@@ -59,45 +54,16 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
     tokio::spawn(async move {
         let accumulator_span = span!(Level::DEBUG, "Accumulator");
-        while let Some((mut message, responder)) = rx.recv().await {
+        while let Some((message, responder)) = rx.recv().await {
             let mut response = message;
+            
+            let entered = accumulator_span.enter();
+            trace!("Received: {:?}", response);
+            drop(entered);
 
-            {
-                let entered = accumulator_span.enter();
-                debug!("Received: {:?}", response);
-                drop(entered);
-            }
+            x642::parse_message(&mut response);
 
-            let data = response.data.as_mut_slice();
-
-            let maybe_dplay_signature = if data.len() >= 28 {&data[20..24]} else {&[]};
-
-            if maybe_dplay_signature == [112, 108, 97, 121] {
-                let mut size_and_token_combined_slice = [0_u8; 4];
-                size_and_token_combined_slice.copy_from_slice(&data[0..4]);
-                let size_and_token_combined_u32 = u32::from_le_bytes(size_and_token_combined_slice);
-                let size_u20 = size_and_token_combined_u32 & 0x000fffff;
-                let token_u12 = (size_and_token_combined_u32 & 0xfff00000) >> 20;
-                let mut sock_addr_in_cursor = Cursor::new(&data[4..20]);
-                let sock_addr_in_address_family = sock_addr_in_cursor.read_u16::<LittleEndian>().unwrap();
-                let sock_addr_in_port = sock_addr_in_cursor.read_u16::<BigEndian>().unwrap();
-                let sock_addr_in_ip_address = sock_addr_in_cursor.read_u32::<BigEndian>().unwrap();
-                let mut version_and_command_cursor = Cursor::new(&data[24..28]);
-                // TODO: parse command with enum containing all valid dplay commands
-                let command = version_and_command_cursor.read_u16::<LittleEndian>().unwrap();
-                let version = version_and_command_cursor.read_u16::<LittleEndian>().unwrap();
-                debug!("DPLAY, size: {}, token: 0x{:x}, SockAddr: [AF: 0x{:x}, port: {}, ip_addr: 0x{:x}, signature: play, version: {:?}, command: {:?}]", size_u20, token_u12, sock_addr_in_address_family, sock_addr_in_port, sock_addr_in_ip_address, version, command);
-                if let Some((address, port)) = response.mask_as_address {
-                    if address.is_ipv4() {
-                        if let IpAddr::V4(address) = address {
-                            debug!("Injecting proxy IP");
-                            data[8..12].copy_from_slice(&(address as Ipv4Addr).octets());
-                        }
-                    }
-                }
-            }
-
-            debug!("Sending: {:?}", response);
+            trace!("Sending: {:?}", response);
 
             let _ = responder.send(response);
         }
