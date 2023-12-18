@@ -8,8 +8,11 @@ mod x642 {
     hot_functions_from_file!("x642/src/lib.rs");
 
     pub use proxy_commons::Message;
+
     #[lib_change_subscription]
     pub fn subscribe() -> hot_lib_reloader::LibReloadObserver {}
+    // #[lib_updated]
+    // pub fn was_updated() -> bool {}
 }
 
 use std::error::Error;
@@ -17,7 +20,7 @@ use std::error::Error;
 pub use proxy_commons::Message;
 use tokio::sync::{mpsc, oneshot};
 use tokio::try_join;
-use tracing::{trace, error, Level, span};
+use tracing::{trace, error, Level, span, debug};
 
 use crate::tcp_proxy::TcpProxy;
 use crate::udp_proxy::UdpProxy;
@@ -43,8 +46,8 @@ async fn main() -> Result<(), Box<dyn Error>> {
 
     tokio::spawn(async move {
         loop {
-            x642::set_shared_logger(proxy_commons::shared_logger::build_shared_logger());
             lib_observer.wait_for_reload();
+            debug!("Reloaded x642");
         }
     });
 
