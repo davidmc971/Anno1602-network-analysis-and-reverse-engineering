@@ -29,15 +29,23 @@ pub fn parse_message(message: &mut Message) {
         let version = version_and_command_cursor
             .read_u16::<LittleEndian>()
             .unwrap();
-        println!("[DPLAY] size: {}, token: 0x{:x}, SockAddr: [AF: 0x{:x}, port: {}, ip_addr: 0x{:x}, signature: play, version: {:?}, command: {}]", 
-            size_u20,
-            token_u12,
-            sock_addr_in_address_family,
-            sock_addr_in_port,
-            sock_addr_in_ip_address,
-            version,
-            match_dplay_command(command)
-        );
+        let command_string = match_dplay_command(command);
+        match command_string.as_str() {
+            "Ping" => (),
+            "PingReply" => (),
+            _ => {
+                println!("[DPLAY] size: {}, token: 0x{:x}, SockAddr: [AF: 0x{:x}, port: {}, ip_addr: 0x{:x}, signature: play, version: {:?}, command: {}]", 
+                    size_u20,
+                    token_u12,
+                    sock_addr_in_address_family,
+                    sock_addr_in_port,
+                    sock_addr_in_ip_address,
+                    version,
+                    command_string
+                );
+            }
+        }
+
         if let Some((address, _)) = message.mask_as_address {
             if address.is_ipv4() {
                 if let IpAddr::V4(address) = address {
