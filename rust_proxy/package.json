@@ -3,7 +3,7 @@
   "description": "Rust backend scripts",
   "scripts": {
     "dev": "cargo watch -q -B 1 -w proxy_commons -w x642 -w crates/directplay-rs/src -w src -x 'run -q'",
-    "dev:parser": "cargo runcc --max-label-length 16 \"cargo watch -q -B 1 -w x642 -x 'build -p x642'\" \"RUST_BACKTRACE=1 cargo run\"",
+    "dev:parser": "cargo runcc --max-label-length 4 \"cargo watch -q -B 1 -w x642 -x 'build -p x642'\" \"RUST_BACKTRACE=1 cargo run\"",
     "start": "cargo run",
     "build": "cargo build",
     "lint": "cargo clippy",
