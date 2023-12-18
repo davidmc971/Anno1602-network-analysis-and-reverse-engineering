@@ -1,5 +1,3 @@
-pub mod shared_logger;
-
 use std::net::IpAddr;
 
 #[derive(Debug, Clone)]
