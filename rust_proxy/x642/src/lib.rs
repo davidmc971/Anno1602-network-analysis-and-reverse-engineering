@@ -1,4 +1,5 @@
 use byteorder::{BigEndian, LittleEndian, ReadBytesExt};
+use bytes::Buf;
 use std::io::Cursor;
 use std::net::{IpAddr, Ipv4Addr};
 
@@ -55,32 +56,103 @@ pub fn parse_message(message: &mut Message) {
             }
         }
     } else {
+        let packet_length = data.len();
         let mut cursor = Cursor::new(&data);
         let id1 = cursor.read_u32::<LittleEndian>().unwrap();
         let id2 = cursor.read_u32::<LittleEndian>().unwrap();
-        let action = cursor.read_u32::<LittleEndian>().unwrap();
+        let data = &data[8..];
+        let mut cursor = Cursor::new(&data);
+        let action_token = cursor.read_u32::<LittleEndian>().unwrap();
         // Size seems to be excluding the IDs
-        let size = cursor.read_u32::<LittleEndian>().unwrap();
+        let action_length = cursor.read_u32::<LittleEndian>().unwrap();
         let rest_of_data = &data[cursor.position() as usize..];
-        println!(
-            "[X642] 0x{:08x} -> 0x{:08x} | action: {}, size: {}:{} | {}",
-            id1,
-            id2,
-            match_game_action(action),
-            size,
-            data.len(),
-            hex::encode(rest_of_data)
-        );
+        match action_token {
+            0x07D1 => print_game_token_generic(
+                id1,
+                id2,
+                "Defocus",
+                action_length,
+                packet_length,
+                hex::encode(rest_of_data).as_str(),
+            ),
+            0x07D2 => print_game_token_generic(
+                id1,
+                id2,
+                "Focus",
+                action_length,
+                packet_length,
+                hex::encode(rest_of_data).as_str(),
+            ),
+            0x0836 => print_game_token_generic(
+                id1,
+                id2,
+                "Move/ShipAction",
+                action_length,
+                packet_length,
+                hex::encode(rest_of_data).as_str(),
+            ),
+            0x084F => print_game_token_generic(
+                id1,
+                id2,
+                "TogglePause+Unknown",
+                action_length,
+                packet_length,
+                hex::encode(rest_of_data).as_str(),
+            ),
+            0x0853 => {
+                cursor.advance(10);
+                let to_player = cursor.read_u16::<LittleEndian>().unwrap();
+                let from_player = cursor.read_u16::<LittleEndian>().unwrap();
+                let chat_message_raw = &rest_of_data[16..76];
+                let chat_message_range_end = chat_message_raw
+                    .iter()
+                    .position(|&c| c == b'\0')
+                    .unwrap_or(chat_message_raw.len());
+                let chat_message =
+                    ::std::str::from_utf8(&chat_message_raw[0..chat_message_range_end])
+                        .unwrap_or(">> Couldn't parse message. <<");
+                println!(
+                    "[X642::Chat::RAW] {}\n[X642::Chat] {} to {}: {}",
+                    hex::encode(data),
+                    player_id_to_string(from_player),
+                    player_id_to_string(to_player),
+                    chat_message
+                )
+            }
+            _ => print_game_token_generic(
+                id1,
+                id2,
+                format!("0x{:04x}", action_token).as_str(),
+                action_length,
+                packet_length,
+                hex::encode(rest_of_data).as_str(),
+            ),
+        }
     }
 }
 
-fn match_game_action(action: u32) -> String {
-    match action {
-        0x07D1 => String::from("Defocus"),
-        0x07D2 => String::from("Focus"),
-        0x0836 => String::from("Move/ShipAction"),
-        0x084F => String::from("TogglePause+Unknown"),
-        _ => format!("0x{:04x}", action),
+fn print_game_token_generic(
+    id1: u32,
+    id2: u32,
+    action_token: &str,
+    action_length: u32,
+    packet_length: usize,
+    rest_of_data_hex: &str,
+) {
+    println!(
+        "[X642] 0x{:08x} -> 0x{:08x} | TKN: {}, LEN: {}:{} | {}",
+        id1, id2, action_token, action_length, packet_length, rest_of_data_hex
+    )
+}
+
+fn player_id_to_string(player_id: u16) -> &'static str {
+    match player_id {
+        0 => "PLAYER_ONE",
+        1 => "PLAYER_TWO",
+        2 => "PLAYER_THREE",
+        3 => "PLAYER_FOUR",
+        0xff => "ALL_PLAYERS",
+        _ => "UNKNOWN",
     }
 }
 
