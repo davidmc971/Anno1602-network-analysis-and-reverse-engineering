@@ -1,45 +1,69 @@
-http://trac.ffmpeg.org/wiki/Capture/Desktop
+# Notes
+
+<http://trac.ffmpeg.org/wiki/Capture/Desktop>
+
+```sh
 ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+100,200 -f pulse -ac 2 -i default output.mkv
+```
 
-
+```sh
 ffmpeg -f x11grab -video_size 800x600 -i :0.0 \
-	-f pulse -ac 2 -i default \
-	-c:v libaom-av1 -preset 8 \
-	-c:a libopus \
-	~/ffmpeg-record/out/$(date +%Y-%b-%d%a--%H-%M-%S | tr A-Z a-z).mkv
+  -f pulse -ac 2 -i default \
+  -c:v libaom-av1 -preset 8 \
+  -c:a libopus \
+  ~/ffmpeg-record/out/$(date +%Y-%b-%d%a--%H-%M-%S | tr A-Z a-z).mkv
+```
 
-
+```sh
 ffmpeg -f x11grab -s 800x600 -i :0.0 -r 5 -g 10 -vcodec vp9 -f matroska pipe:1
+```
 
+```sh
 ffmpeg -f x11grab -s 800x600 -i :0.0 -r 5 -g 10 -vcodec vp9 -f matroska ~/ffmpeg-record/out/$(date +%Y-%b-%d%a--%H-%M-%S | tr A-Z a-z).mkv
+```
 
+```sh
 ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f alsa -i default -c:v libx264 -preset ultrafast -c:a aac screen.mp4
+```
 
+```sh
 ffmpeg -i input.mp4 -vcodec libx264 -crf 27 -preset veryfast -c:a copy -s 960x540 output.mp4
+```
 
+```sh
 -crf 0
+```
 
+```sh
 ffmpeg -f x11grab -video_size 800x600 -i :0.0 \
-	-f pulse -ac 2 -i default \
-	-c:v libaom-av1 -crf 0 \
-	-c:a libopus \
-	~/ffmpeg-record/out/$(date +%Y-%b-%d%a--%H-%M-%S | tr A-Z a-z).mkv
+  -f pulse -ac 2 -i default \
+  -c:v libaom-av1 -crf 0 \
+  -c:a libopus \
+  ~/ffmpeg-record/out/$(date +%Y-%b-%d%a--%H-%M-%S | tr A-Z a-z).mkv
+```
 
-
+```sh
 ffmpeg -f x11grab -video_size cif -framerate 25 -i :0.0 -c:v libvpx-vp9 out.webm
+```
 
+```sh
 ffmpeg -f x11grab -video_size 800x600 -framerate 30 -i :0.0 \
   -f pulse -ac 1 -i default \
   -c:v libvpx-vp9 \
-	-c:a libopus \
+  -c:a libopus \
   ~/ffmpeg-record/out/$(date +%Y-%b-%d%a--%H-%M-%S | tr A-Z a-z)out.webm
+```
 
+```sh
 ffmpeg -f x11grab -video_size 800x600 -framerate 30 -i :0.0 \
   -f pulse -ac 1 -i default \
   -c:v libvpx-vp9 \
-	-c:a libopus \
+  -c:a libopus \
   -f webm pipe:1
-
+```
 
 For WebRTC:
+
+```sh
 -pix_fmt yuv420p -c:v libx264 -bsf:v h264_mp4toannexb -b:v 2M -max_delay 0 -bf 0 -f h264
+```
