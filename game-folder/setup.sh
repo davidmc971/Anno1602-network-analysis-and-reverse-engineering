@@ -1,6 +1,7 @@
 #!/bin/sh
 
-export WINEARCH=win32
+# on Arch, wine is now by default in WoW64 mode and 32-bit apps can be run in 64-bit mode
+# export WINEARCH=win32
 
 mkdir -p ./client_install
 
