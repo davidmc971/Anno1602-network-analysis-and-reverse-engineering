@@ -16,11 +16,12 @@ mod x642 {
 }
 
 use std::error::Error;
+use std::time::Duration;
 
 pub use proxy_commons::Message;
 use tokio::sync::{mpsc, oneshot};
 use tokio::try_join;
-use tracing::{trace, error, Level, span, debug};
+use tracing::{debug, error, info, span, trace, Level};
 
 use crate::tcp_proxy::TcpProxy;
 use crate::udp_proxy::UdpProxy;
@@ -71,6 +72,17 @@ async fn main() -> Result<(), Box<dyn Error>> {
             let _ = responder.send(response);
         }
     });
+
+    loop {
+        let addr = format!("10.30.0.1:{}", 47624);
+        let connected = tokio::time::timeout(Duration::from_millis(250), tokio::net::TcpStream::connect(&addr))
+        .await
+        .is_ok();
+
+        if connected { break }
+    }
+
+    info!("Found host.");
 
     let udp_proxy_session_init = UdpProxy::new("0.0.0.0".to_string(), 47624, 1024).await?;
     let tcp_proxy_session_data = TcpProxy::new().await?;
